@@ -8,7 +8,7 @@ import {
 import FormInput from '../form-input';
 import Button from '../button';
 
-import './sign-up.styles.sass';
+import './sign-up-form.styles.sass';
 
 const defaultFormFields = {
   displayName: '',
@@ -52,7 +52,6 @@ const SignUp = () => {
 
   const handleChange = (event) => {
     const { name, value } = event.target;
-
     setFormFields({ ...formFields, [name]: value });
   };
 
@@ -101,7 +100,7 @@ const SignUp = () => {
             value: confirmPassword,
           }}
         />
-        <Button children='Sign Up' type='submit'></Button>
+        <Button type='submit'>Sign Up</Button>
       </form>
     </div>
   );
