@@ -17,7 +17,7 @@ const defaultFormFields = {
   confirmPassword: '',
 };
 
-const SignUp = () => {
+const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, confirmPassword } = formFields;
 
@@ -37,9 +37,7 @@ const SignUp = () => {
         email,
         password
       );
-
       await createUserDocumentFromAuth(user, { displayName });
-
       resetFormField();
     } catch (error) {
       if (error.code === 'auth/email-already-in-use') {
@@ -54,6 +52,8 @@ const SignUp = () => {
     const { name, value } = event.target;
     setFormFields({ ...formFields, [name]: value });
   };
+
+  console.log('hit');
 
   return (
     <div className='sign-up-container'>
@@ -106,4 +106,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default SignUpForm;
